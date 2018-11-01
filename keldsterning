@@ -1,30 +1,30 @@
 internal class Terning
 {
-  private int antalØjne;
-  private static Random r = new Random();
-  private Boolean HoldMig = false; 
+  private int antalØjne;  //definerer objekt antalØjne
+  private static Random r = new Random();  //definerer metode Random "new'er metode up"
+  private Boolean HoldMig = false; // definerer metode HoldMig
   
   public int Øjne
   {
-    get { return antalØjne; }
+    get { return antalØjne; } 
   }
   
   public Boolean Holdt
   {
     get { return HoldMig; }
   }
-  public void KastTerning()
+  public void KastTerning() // denne metode kaster terningen, KUN HVIS HoldMig=false. Metoden kaldes, hvor r.Next(1,7) henter random tal mellem 1-6.
   {
     if (HoldMig == false)
       { antalØjne = r.Next(1,7); }
   }
   
-  public void HoldTerning ()
+  public void HoldTerning ()  // denne metode tager terningen med, hvis HoldMig er false
   {
     HoldMig = true;
   }
   
-  public void TagTerningMed()
+  public void TagTerningMed() // denne metode tager terningen med, hvis HoldMig er false
   {
     HoldMig = false;
   }
